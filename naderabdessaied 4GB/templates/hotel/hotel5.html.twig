@@ -1,0 +1,316 @@
+<html lang="en">
+<head>
+<title>Hotel</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+{% block head_css %}
+     <link rel="stylesheet" type="text/css" href="{{ asset('styles/bootstrap4/bootstrap.min.css') }}">
+<link href="{{ asset('plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel='stylesheet' type="text/css">
+<link rel='stylesheet' type="text/css" href="{{ asset('styles/about_styles.css') }}">
+<link rel='stylesheet' type="text/css" href="{{ asset('styles/about_responsive.css') }}">
+{% endblock %}
+
+<body>
+<div class="super_container">
+	
+	<!-- Header -->
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_container d-flex flex-row align-items-center justify-content-start">
+
+						<!-- Logo -->
+						<div class="logo_container">
+							<div class="logo">
+								<div>Tunisie-Airline</div>
+								<div>travel agency</div>
+								<div class="logo_image"><img src="{{ asset('images/logo.png') }}" alt=""></div>
+							</div>
+						</div>
+
+						<!-- Main Navigation -->
+						<nav class="main_nav ml-auto">
+							<ul class="main_nav_list">
+							<li class="main_nav_item"><a href="{{ path('agence') }}">Home</a></li>	
+								<li class="main_nav_item"><a href="{{ path('offers') }}">Offers</a></li>
+								<li class="main_nav_item"><a href="{{ path('news') }}">News</a></li>
+								<li class="main_nav_item"><a href="{{ path('contact') }}">Contact</a></li>
+								<li class="main_nav_item active"><a data-toggle="modal" href="#myModal">Se connecter</a></li>
+							</ul>
+						</nav>
+
+						<!-- Search -->
+						<div class="search">
+							<form action="#" class="search_form">
+								<input type="search" name="search_input" class="search_input ctrl_class" required="required" placeholder="Keyword">
+								<button type="submit" class="search_button ml-auto ctrl_class"><img src="{{ asset('images/search.png') }}" alt=""></button>
+							</form>
+						</div>
+
+						<!-- Hamburger -->
+						<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu_container menu_mm">
+
+		<!-- Menu Close Button -->
+		<div class="menu_close_container">
+			<div class="menu_close"></div>
+		</div>
+
+		<!-- Menu Items -->
+		<div class="menu_inner menu_mm">
+			<div class="menu menu_mm">
+				<div class="menu_search_form_container">
+					<form action="#" id="menu_search_form">
+						<input type="search" class="menu_search_input menu_mm">
+						<button id="menu_search_submit" class="menu_search_submit" type="submit"><img src="{{ asset('images/search_2.png') }}" alt=""></button>
+					</form>
+				</div>
+				<ul class="menu_list menu_mm">
+				<li class="menu_item menu_mm"><a href="{{ path('agence') }}">Home</a></li>
+					<li class="menu_item menu_mm"><a href="{{ path('offers') }}">Offers</a></li>
+					<li class="menu_item menu_mm"><a href="{{ path('news') }}">News</a></li>
+					<li class="menu_item menu_mm"><a href="{{ path('contact') }}">Contact</a></li>
+				</ul>
+
+				<!-- Menu Social -->
+				
+				<div class="menu_social_container menu_mm">
+					<ul class="menu_social menu_mm">
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+
+				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+	<!-- Home -->
+
+	<div class="home">
+		<!-- Image by https://unsplash.com/@peecho -->
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('images/fact_background.jpg') }}" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_content">
+						<div class="home_content_inner">
+							<div class="home_title">Hôtel</div>
+							<div class="home_breadcrumbs">
+								<ul class="home_breadcrumbs_list">
+									<li class="home_breadcrumb"><a href="{{ path('agence') }}">Home</a></li>
+									<li class="home_breadcrumb">Miramar Golf & Spa</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<!-- Find Form -->
+
+<div class="about">
+		<div class="container">
+			
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_2.jpg') }}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/miramar_golf_&_spa_4.jpg') }}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/miramar_golf_&_spa_5.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_6.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_7.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_8.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_9.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_10.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_11.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_12.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_13.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_14.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_15.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_16.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_17.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Miramar_Golf_&_SPA_18.jpg') }}" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<h2 style="text-align: justify;">Infos Pratiques :</h2>
+<p style="text-align: justify;">Vous cherchez un endroit pour passer un instant en couple ou pour passer votre lune de miel ? Pourquoi pas la Tunisie ? Le romantisme des lieux, le cadre unique : tout est fait pour que vous puissiez commencer votre vie de jeune marié sous les meilleurs auspices. Et afin d’être sûr de la qualité de votre séjour, opter pour Miramar Golf &amp; spa est l’hôtel est de mise.&nbsp;</p>
+<h3 style="text-align: justify;">Situation de l'hôtel :</h3>
+<p style="text-align: justify;">Miramar Golf &amp; spa 3* est situé seulement à quelque minute de la plage et au plein cœur de la célèbre station balnéaire de Port El-Kantaoui. Il est également à quelque kilomètre de l’aéroport international de Monastir Habib-Bourguiba et Enfidha-Hammamet international Airport. De quoi vous faciliter l’organisation de votre voyage.&nbsp;</p>
+<p style="text-align: justify;">Plusieurs kilomètres séparent l’établissement Miramar Golf and spa du port de Port El-Kantaoui. Il en est de même pour le Stade olympique et la plage de Sousse. L’hôtel est situé au plein cœur du célèbre parcours de Kantaoui golf et à 10 kilomètres au sud du centre de la ville de Sousse. Vous avez désormais toutes les informations nécessaires pour en apprécier la beauté.&nbsp;</p>
+<h3 style="text-align: justify;">Les types d'hébergement que puis-je réserver à l'établissement :</h3>
+<p style="text-align: justify;">Le Miramar Club and Spa est pourvu d’un jardin bien entretenu et d’une beauté rare. Mais sa grande taille a aussi été à l’origine de son renom. En effet, il s’agit de l’un des complexes pouvant vous proposer 126 chambres comprenant chacune un coin salon, un téléphone près du lit, et de connexion gratuite Wi-Fi mise à votre disposition dans tous les locaux pour vous permettre de rester en contact avec tout votre proche. Le tout s’étale sur plusieurs étages servis par un ascenseur.&nbsp;</p>
+<p style="text-align: justify;">Les chambres sont dotées d’un balcon et d’une télévision avec des chaînes satellites. Elles sont climatisées et mettent à votre disposition un minibar. Une salle de bain avec de douche séparée et une baignoire est attenante à votre chambre. Tout est fait pour assurer votre confort.&nbsp;</p>
+<p style="text-align: justify;">Un service de nettoyage à sec et de blanchisserie est inclus dans les services proposés. L’hôtel dispose également d’un service de concierge pour l’entretien de votre espace privé.&nbsp;</p>
+<p style="text-align: justify;">La réception est ouverte de 24 heures sur 24 et un personnel multilingue vous accueillera avec convivialité à toute heure de la journée. Et vous n’avez pas besoin de troquer votre euro contre la monnaie locale avant- d’arriver sur les lieux. L’hôtel met une infrastructure à votre disposition pour ce faire.&nbsp;</p>
+<h3 style="text-align: justify;">Restaurants et bars sur place :</h3>
+<p style="text-align: justify;">Profitez-vous d’un bon repas au restaurant de l’établissement. On vous prépare chaque matin un petit déjeuner buffet, compris dans le prix de la chambre. L’hôtel possède également un restaurant principal qui prépare et vous présente aussi bien des menus internationaux que des spécialités locales. Chacun des restaurants assure des services de qualité et une prestation professionnelle à chaque diner et déjeuner. Vous avez le choix entre un restaurant à l’extérieur pour admirer la vue et les alentours à tout moment ou un restaurant à l’intérieur de l’établissement en toute intimité.</p>
+<p style="text-align: justify;">Un salon principal est à votre disposition. Vous pouvez y déguster café et boissons chaudes. En outre, un salon-bar, un snack-bar de grillade et barbecue seront aussi accessibles depuis la piscine.&nbsp;</p>
+<p style="text-align: justify;">Vous pouvez profiter aussi d’un coffee-shop et un café maure le soir.</p>
+<p style="text-align: justify;">Envie d’un peu de collations tout en profitant des bassins de l’établissement ? Le bar piscine est à disposition. Il est accessible pour tous ceux qui sont âge de boire. Et ces derniers pourront profiter des diverses animations qui s’y trouvent.&nbsp;</p>
+<h2 style="text-align: justify;">Les plus de l'hôtel Miramar Golf and Spa 3* Tunisiebooking&nbsp; :</h2>
+<h3 style="text-align: justify;">Activités et loisirs disponibles à l'établissement :</h3>
+<p style="text-align: justify;">Des soins corporels et des soins de visages sont proposés afin que vous puissiez vivre un moment de pure détente sans avoir à sortir des limites de l’établissement. Un bain à remous et une piscine extérieure sont aussi disponibles sur place. Un sauna est également inclus dans l’hôtel. Pour information, le centre de soin Spa est entièrement dédié au bien-être et la relaxation. Il est équipé de trois cabines de massage, d’un hammam, deux cabines d’hydro massage, d’une douche à affusion et d’une douche à jet.&nbsp;</p>
+<p style="text-align: justify;">Les activités ne manquent pas au sein <a title="de l'hotel Sousse" href="/hotels_sousse.html"><span style="color: #000000;">de l'hotel Sousse</span></a>. Vous pourrez choisir aussi à faire quelque partie de golf. Miramar Club and Spa vous propose un court de tennis extérieur pour les débutants et pour ceux qui veulent améliorer leur performance en la matière.</p>
+<p style="text-align: justify;">&nbsp;Si vous aimez la baignade, profitez la piscine en plein air ou couverte ainsi que de la plage privée équipée de parasols et de transats. Attention cependant, ces derniers sont payants.</p>
+<h3 style="text-align: justify;">Cet hotel est connu aussi sous le nom :</h3>
+<p style="text-align: justify;">Hotel miramar golf el kantaoui sousse</p>
+<p style="text-align: justify;">Miramar golf port el kantaoui</p>
+<p style="text-align: justify;">Miramar golf spa sousse</p>
+<p style="text-align: justify;">Hotel alassio kantaoui sousse</p>
+<p style="text-align: justify;">Hotel miramar el kantaoui sousse</p>
+<p style="text-align: justify;">Miramar club sousse</p>
+</div></div></div>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+
+				<!-- Footer Column -->
+				<div class="col-lg-4 footer_col">
+					<div class="footer_about">
+						<!-- Logo -->
+						<div class="logo_container">
+							<div class="logo">
+								<div>Tunisie-Airline</div>
+								<div>travel agency</div>
+								<div class="logo_image"><img src="{{ asset('images/logo.png') }}" alt=""></div>
+							</div>
+						</div>
+						<div class="footer_about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar sed mauris eget tincidunt. Sed lectus nulla, tempor vel eleifend quis, tempus rut rum metus. Pellentesque ultricies enim eu quam fermentum hendrerit.</div>
+						<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+					</div>
+				</div>
+
+				<!-- Footer Column -->
+				<div class="col-lg-4 footer_col">
+					<div class="footer_latest">
+						<div class="footer_title">Latest News</div>
+						<div class="footer_latest_content">
+
+							<!-- Footer Latest Post -->
+							<div class="footer_latest_item">
+								<div class="footer_latest_image"><img src="{{ asset('images/latest_1.jpg') }}" alt="https://unsplash.com/@peecho"></div>
+								<div class="footer_latest_item_content">
+									<div class="footer_latest_item_title"><a href="{{ path('news') }}">Brazil Summer</a></div>
+									<div class="footer_latest_item_date">Jan 09, 2018</div>
+								</div>
+							</div>
+
+							<!-- Footer Latest Post -->
+							<div class="footer_latest_item">
+								<div class="footer_latest_image"><img src="{{ asset('images/latest_2.jpg') }}" alt="https://unsplash.com/@sanfrancisco"></div>
+								<div class="footer_latest_item_content">
+									<div class="footer_latest_item_title"><a href="{{ path('news') }}">A perfect vacation</a></div>
+									<div class="footer_latest_item_date">Jan 09, 2018</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Footer Column -->
+				<div class="col-lg-4 footer_col">
+					<div class="tags footer_tags">
+						<div class="footer_title">Tags</div>
+						<ul class="tags_content d-flex flex-row flex-wrap align-items-start justify-content-start">
+							<li class="tag"><a href="#">travel</a></li>
+							<li class="tag"><a href="#">summer</a></li>
+							<li class="tag"><a href="#">cruise</a></li>
+							<li class="tag"><a href="#">beach</a></li>
+							<li class="tag"><a href="#">offer</a></li>
+							<li class="tag"><a href="#">vacation</a></li>
+							<li class="tag"><a href="#">trip</a></li>
+							<li class="tag"><a href="#">city break</a></li>
+							<li class="tag"><a href="#">adventure</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+</div>
+
+{% block head_js %}
+     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ asset('styles/bootstrap4/popper.js') }}"></script>
+<script src="{{ asset('styles/bootstrap4/bootstrap.min.js') }}"</script>
+<script src="{{ asset('plugins/greensock/TweenMax.min.js') }}"></script>
+<script src="{{ asset('plugins/greensock/TimelineMax.min.js') }}"></script>
+<script src="{{ asset('plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+<script src="{{ asset('plugins/greensock/animation.gsap.min.js') }}"></script>
+<script src="{{ asset('plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+<script src="{{ asset('plugins/easing/easing.js') }}"></script>
+<script src="{{ asset('plugins/parallax-js-master/parallax.min.js') }}"></script>
+<script src="{{ asset('js/about_custom.js') }}"></script>
+{% endblock %}
+
+
+</body>
+</html>

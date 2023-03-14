@@ -1,0 +1,1142 @@
+<html lang="en">
+<head>
+<title>Offers</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{ asset('styles/bootstrap4/bootstrap.min.css') }}" >
+<link href="{{ asset('plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{{ asset('styles/offers_styles.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ asset('styles/offers_responsive.css') }}" >
+<link rel="stylesheet" href="{{ asset('https://use.fontawesome.com/releases/v5.0.13/css/all.css') }}"  integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="super_container">
+	
+	<!-- Header -->
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_container d-flex flex-row align-items-center justify-content-start">
+
+						<!-- Logo -->
+						<div class="logo_container">
+							<div class="logo">
+								<div>Tunisie-Airline</div>
+								<div>travel agency</div>
+								<div class="logo_image"><img src="{{ asset('images/logo.png') }}" alt=""></div>
+							</div>
+						</div>
+
+						<!-- Main Navigation -->
+						<nav class="main_nav ml-auto">
+							<ul class="main_nav_list">
+								<li class="main_nav_item"><a href="{{ path('agence') }}" >Home</a></li>
+								<li class="main_nav_item active"><a href="{{ path('offers') }}">Offers</a></li>
+										<li class="main_nav_item"><a href="{{ path('news')}}">News</a></li>
+								<li class="main_nav_item"><a href="{{ path('contact')}}">Contact</a></li>
+							{% if not app.user %}
+								<li class="main_nav_item"><a data-toggle="modal" href="#myModal">Se connecter</a></li>
+							{% else %}
+								<li class="main_nav_item"><a href="{{ path('security_logout') }}">Se deconnecter</a></li>
+								{% endif %}
+							</ul>
+						</nav>
+
+						<!-- Search -->
+						<div class="search">
+							<form action="#" class="search_form">
+								<input type="search" name="search_input" class="search_input ctrl_class" required="required" placeholder="Keyword">
+								<button type="submit" class="search_button ml-auto ctrl_class"><img src="{{ asset('images/search.png') }}" alt=""></button>
+							</form>
+						</div>
+
+						<!-- Hamburger -->
+						<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu_container menu_mm">
+
+		<!-- Menu Close Button -->
+		<div class="menu_close_container">
+			<div class="menu_close"></div>
+		</div>
+
+		<!-- Menu Items -->
+		<div class="menu_inner menu_mm">
+			<div class="menu menu_mm">
+				<div class="menu_search_form_container">
+					<form action="#" id="menu_search_form">
+						<input type="search" class="menu_search_input menu_mm">
+						<button id="menu_search_submit" class="menu_search_submit" type="submit"><img src="{{ asset('images/search_2.png') }}" alt=""></button>
+					</form>
+				</div>
+				<ul class="menu_list menu_mm">
+					<li class="menu_item menu_mm"><a href="{{ path('agence') }}">Home</a></li>
+					<li class="menu_item menu_mm"><a href=" #">About us</a></li>
+					<li class="menu_item menu_mm"><a href="{{ path('offers') }}">Offers</a></li>
+					<li class="menu_item menu_mm"><a href="{{ path('news') }}">News</a></li>
+					<li class="menu_item menu_mm"><a href="{{ path('contact') }}">Contact</a></li>
+				</ul>
+
+				<!-- Menu Social -->
+				
+				<div class="menu_social_container menu_mm">
+					<ul class="menu_social menu_mm">
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+
+				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+	<!-- Home -->
+
+	<div class="home">
+		<!-- Image by https://unsplash.com/@peecho -->
+		<div class="home_background parallax-window"  style="background-image:url(../images/offers.jpg);"  data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_content">
+						<div class="home_content_inner">
+							<div class="home_title">Offers</div>
+							<div class="home_breadcrumbs">
+								<ul class="home_breadcrumbs_list">
+									<li class="home_breadcrumb"><a href="{{ path('agence') }}">Home</a></li>
+									<li class="home_breadcrumb">Offers</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<!-- Find Form -->
+
+	
+
+	<!-- Offers -->
+
+	<div class="offers">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h2>Top destinations in Tunisie</h2>
+						<div>take a look at these offers</div>
+					</div>
+				</div>
+			</div>
+			<div class="row filtering_row">
+				<div class="col">
+					<div class="sorting_group_1">
+						<ul class="item_sorting">
+							<li>
+								<span class="sorting_text">Filter by</span>
+								<i class="fa fa-angle-down"></i>
+								<ul>
+									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Show All</span></li>
+									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
+									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "name" }'><span>Name</span></li>
+								</ul>
+							</li>
+							<li>
+								<span class="sorting_text">Stars</span>
+								<i class="fa fa-angle-down"></i>
+								<ul>
+									<li class="item_filter_btn" data-filter="*"><span>Show All</span></li>
+									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "stars" }'><span>Ascending</span></li>
+									<li class="item_filter_btn" data-filter=".rating_1"><span>1</span></li>
+									<li class="item_filter_btn" data-filter=".rating_2"><span>2</span></li>
+									<li class="item_filter_btn" data-filter=".rating_3"><span>3</span></li>
+									<li class="item_filter_btn" data-filter=".rating_4"><span>4</span></li>
+									<li class="item_filter_btn" data-filter=".rating_5"><span>5</span></li>
+								</ul>
+							</li>
+							<li>
+								<span class="sorting_text">Price</span>
+								<i class="fa fa-angle-down"></i>
+								<ul>
+									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Default</span></li>
+									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="sorting_group_2 clearfix">
+						<div class="sorting_icons clearfix">
+							<div class="detail_view"><i class="fa fa-bars" aria-hidden="true"></i></div>
+							<div class="box_view"><i class="fa fa-th-large" aria-hidden="true"></i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="items item_grid clearfix">
+<div class="item clearfix rating_5">
+							<div class="item_image"><a href="{{ path('hotel10') }}"><img src="{{ asset('images/laico_.jpg') }}" alt=""></a></div>
+							<div class="item_content">
+								
+								
+								<div class="row">
+    <div class="col">
+      <h3>Laico</h3>
+    </div>
+    <div class="col">
+    <div class="rating rating_5" data-rating="5">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+    </div>
+	<div class="col">
+	
+      <h3 style="style=">Prix</h3>
+	  <b id="prix117" style="color: red">105 TND</b>
+    </div>
+  </div>
+
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a onclick="myFunc117()" data-toggle="tab" href="#home117">Petit dejeuner</a></li>
+    <li><a onclick="myFunction117()" data-toggle="tab" href="#menu1117">Demi pension</a></li>
+    <li><a onclick="myFunct117()" data-toggle="tab" href="#menu2117">Pension complete</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home117" class="tab-pane fade in active">
+      <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu1117" class="tab-pane fade">
+          <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu2117" class="tab-pane fade">
+         <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+  </div>
+<div 
+style=" left: 580px;cursor:pointer;background-color:#ffcb00; width:30%; height:40px; margin:0px; padding-top:5px;border-radius:4px; border-bottom:1px solid #e4a000;font-family:Arial; color:#003581;font-size: 20px; font-weight: bold;" class="null">
+<a href="{{ path('paiement') }}">Je paye en ligne &nbsp;&nbsp;&nbsp;</a>
+</div>
+
+								
+							</div>
+						</div>
+						<!-- Item -->
+						<div class="item clearfix rating_5">
+							<div class="item_image"><a href="{{ path('hotel') }}"><img src="{{  asset('images/Sousse_palace.jpg') }}"  alt=""></a></div>
+							<div class="item_content">
+								
+								
+								<div class="row">
+    <div class="col">
+      <h3>Sousse Palace</h3>
+    </div>
+    <div class="col">
+    <div class="rating rating_5" data-rating="5">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+    </div>
+	<div class="col">
+      <h3>Prix</h3>
+	  <b id="prix" style="color: red">177 TND</b>
+    </div>
+  </div>
+
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a onclick="myFunc()" data-toggle="tab" href="#home">Petit dejeuner</a></li>
+    <li><a onclick="myFunction()" data-toggle="tab" href="#menu1">Demi pension</a></li>
+    <li><a onclick="myFunct()" data-toggle="tab" href="#menu2">Pension complete</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+          <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+         <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+  </div>
+<div 
+style=" left: 580px;cursor:pointer;background-color:#ffcb00; width:30%; height:40px; margin:0px; padding-top:5px;border-radius:4px; border-bottom:1px solid #e4a000;font-family:Arial; color:#003581;font-size: 20px; font-weight: bold;" class="null">
+<a href="{{ path('paiement') }}">Je paye en ligne &nbsp;&nbsp;&nbsp;</a>
+</div>
+
+								
+							</div>
+						</div>
+
+						<!-- Item -->
+						<div class="item clearfix rating_5">
+							<div class="item_image"><a href="{{ path('hotel2') }}"><img src="{{  asset('images/Movenpick_Resort___Marine_Spa_2.jpg') }}"   alt=""></a></div>
+							<div class="item_content">
+				<div class="row">
+    <div class="col">
+      <h3>Movenpick Resort & Marine Spa</h3>
+    </div>
+    <div class="col">
+    <div class="rating rating_5" data-rating="5">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+    </div>
+	<div class="col">
+      <h3>Prix</h3>
+	  <b id="prix1" style="color: red">161 TND</b>
+    </div>
+  </div>
+
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a onclick="myFunction1()" data-toggle="tab" href="#home1">Petit dejeuner</a></li>
+    <li><a onclick="myFunc1()" data-toggle="tab" href="#menu11">Demi pension</a></li>
+    <li><a onclick="myFunct1()" data-toggle="tab" href="#menu21">Pension complete</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home1" class="tab-pane fade in active">
+      <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu11" class="tab-pane fade">
+          <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu21" class="tab-pane fade">
+         <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+  </div>
+<div 
+style=" left: 580px;cursor:pointer;background-color:#ffcb00; width:30%; height:40px; margin:0px; padding-top:5px;border-radius:4px; border-bottom:1px solid #e4a000;font-family:Arial; color:#003581;font-size: 20px; font-weight: bold;" class="null">
+<a href="{{ path('paiement') }}">Je paye en ligne &nbsp;&nbsp;&nbsp;</a>
+</div>
+
+								
+							</div>
+						</div>
+
+						<!-- Item -->
+					
+
+						<div class="item clearfix rating_4">
+							<div class="item_image"><a href="{{ path('hotel3') }}"><img src="{{  asset('images/El_Mouradi_Club_Kantaoui_2.jpg') }}"  alt=""></a></div>
+							<div class="item_content">
+				<div class="row">
+    <div class="col">
+      <h3>El Mouradi Club Kantaoui</h3>
+    </div>
+    <div class="col">
+    <div class="rating rating_4" data-rating="4">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+    </div>
+	<div class="col">
+      <h3>Prix</h3>
+	  <b id="prix15" style="color: red">79 TND</b>
+    </div>
+  </div>
+
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a onclick="myFunction15()" data-toggle="tab" href="#home15">Petit dejeuner</a></li>
+    <li><a onclick="myFunc15()" data-toggle="tab" href="#menu115">Demi pension</a></li>
+    <li><a onclick="myFunct15()" data-toggle="tab" href="#menu215">Pension complete</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home15" class="tab-pane fade in active">
+      <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu115" class="tab-pane fade">
+          <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu215" class="tab-pane fade">
+         <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+  </div>
+<div 
+style=" left: 580px;cursor:pointer;background-color:#ffcb00; width:30%; height:40px; margin:0px; padding-top:5px;border-radius:4px; border-bottom:1px solid #e4a000;font-family:Arial; color:#003581;font-size: 20px; font-weight: bold;" class="null">
+<a href="{{ path('paiement') }}">Je paye en ligne &nbsp;&nbsp;&nbsp;</a>
+</div></div></div>
+
+						<!-- Item -->
+						<div class="item clearfix rating_4">
+							<div class="item_image"><a href="{{ path('hotel4') }}"><img src="{{ asset('images/Marhaba_Royal_Salem_2.jpg') }}"  alt=""></a></div>
+							<div class="item_content">
+				<div class="row">
+    <div class="col">
+      <h3>Marhaba Royal Salem</h3>
+    </div>
+    <div class="col">
+    <div class="rating rating_4" data-rating="4">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+    </div>
+	<div class="col">
+      <h3>Prix</h3>
+	  <b id="prix14" style="color: red">63 TND</b>
+    </div>
+  </div>
+
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a onclick="myFunction14()" data-toggle="tab" href="#home14">Petit dejeuner</a></li>
+    <li><a onclick="myFunc14()" data-toggle="tab" href="#menu114">Demi pension</a></li>
+    <li><a onclick="myFunct14()" data-toggle="tab" href="#menu214">Pension complete</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home14" class="tab-pane fade in active">
+      <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu114" class="tab-pane fade">
+          <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu214" class="tab-pane fade">
+         <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+  </div>
+<div 
+style=" left: 580px;cursor:pointer;background-color:#ffcb00; width:30%; height:40px; margin:0px; padding-top:5px;border-radius:4px; border-bottom:1px solid #e4a000;font-family:Arial; color:#003581;font-size: 20px; font-weight: bold;" class="null">
+<a href="{{ path('paiement') }}">Je paye en ligne &nbsp;&nbsp;&nbsp;</a>
+</div>
+
+								
+							</div>
+						</div>
+
+						<!-- Item -->
+					
+
+						<div class="item clearfix rating_3">
+							<div class="item_image"><a href="{{ path('hotel5') }}"><img src="{{  asset('images/Miramar_Golf___SPA_2.jpg') }}"  alt=""></a></div>
+							<div class="item_content">
+				<div class="row">
+    <div class="col">
+      <h3>Miramar_Golf_&_SPA</h3>
+    </div>
+    <div class="col">
+    <div class="rating rating_3" data-rating="3">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+    </div>
+	<div class="col">
+      <h3>Prix</h3>
+	  <b id="prix17" style="color: red">60 TND</b>
+    </div>
+  </div>
+
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a onclick="myFunction17()" data-toggle="tab" href="#home17">Petit dejeuner</a></li>
+    <li><a onclick="myFunc17()" data-toggle="tab" href="#menu117">Demi pension</a></li>
+    <li><a onclick="myFunct17()" data-toggle="tab" href="#menu217">Pension complete</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home17" class="tab-pane fade in active">
+      <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu117" class="tab-pane fade">
+          <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu217" class="tab-pane fade">
+         <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+  </div>
+<div 
+style=" left: 580px;cursor:pointer;background-color:#ffcb00; width:30%; height:40px; margin:0px; padding-top:5px;border-radius:4px; border-bottom:1px solid #e4a000;font-family:Arial; color:#003581;font-size: 20px; font-weight: bold;" class="null">
+<a href="{{ path('paiement') }}">Je paye en ligne &nbsp;&nbsp;&nbsp;</a>
+</div></div></div>
+
+						<!-- Item -->
+						<div class="item clearfix rating_3">
+							<div class="item_image"><a href="{{ path('hotel6') }}"><img src="{{  asset('images/Sindbad_Center_2.jpg') }}"  alt=""></a></div>
+							<div class="item_content">
+				<div class="row">
+    <div class="col">
+      <h3>Sindbad Center</h3>
+    </div>
+    <div class="col">
+    <div class="rating rating_3" data-rating="3">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+    </div>
+	<div class="col">
+      <h3>Prix</h3>
+	  <b id="prix16" style="color: red">50 TND</b>
+    </div>
+  </div>
+
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a onclick="myFunction16()" data-toggle="tab" href="#home16">Petit dejeuner</a></li>
+    <li><a onclick="myFunc16()" data-toggle="tab" href="#menu11">Demi pension</a></li>
+    <li><a onclick="myFunct1()" data-toggle="tab" href="#menu21">Pension complete</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home16" class="tab-pane fade in active">
+      <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu116" class="tab-pane fade">
+          <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu216" class="tab-pane fade">
+         <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+  </div>
+<div 
+style=" left: 580px;cursor:pointer;background-color:#ffcb00; width:30%; height:40px; margin:0px; padding-top:5px;border-radius:4px; border-bottom:1px solid #e4a000;font-family:Arial; color:#003581;font-size: 20px; font-weight: bold;" class="null">
+<a href="{{ path('paiement') }}">Je paye en ligne &nbsp;&nbsp;&nbsp;</a>
+</div>
+
+								
+							</div>
+						</div>
+
+						<!-- Item -->
+					
+
+						<div class="item clearfix rating_5">
+							<div class="item_image"><a href="{{ path('hotel7') }}"><img src="{{ asset('images/The_Russelior_.jpg') }}"  alt=""></a></div>
+							<div class="item_content">
+				<div class="row">
+    <div class="col">
+      <h3>The Russelior</h3>
+    </div>
+    <div class="col">
+    <div class="rating rating_5" data-rating="5">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+    </div>
+	<div class="col">
+      <h3>Prix</h3>
+	  <b id="prix1" style="color: red">167 TND</b>
+    </div>
+  </div>
+
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a onclick="myFunction1()" data-toggle="tab" href="#home13">Petit dejeuner</a></li>
+    <li><a onclick="myFunc1()" data-toggle="tab" href="#menu11">Demi pension</a></li>
+    <li><a onclick="myFunct1()" data-toggle="tab" href="#menu21">Pension complete</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home13" class="tab-pane fade in active">
+      <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu11" class="tab-pane fade">
+          <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu21" class="tab-pane fade">
+         <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+  </div>
+<div 
+style=" left: 580px;cursor:pointer;background-color:#ffcb00; width:30%; height:40px; margin:0px; padding-top:5px;border-radius:4px; border-bottom:1px solid #e4a000;font-family:Arial; color:#003581;font-size: 20px; font-weight: bold;" class="null">
+<a href="{{ path('paiement') }}">Je paye en ligne &nbsp;&nbsp;&nbsp;</a>
+</div></div></div>
+
+<!-- Item -->
+					
+
+						<div class="item clearfix rating_5">
+							<div class="item_image"><a href="{{ path('hotel8') }}"><img src="{{ asset('images/Carthage_Thalasso_2.png') }}"  alt=""></a></div>
+							<div class="item_content">
+				<div class="row">
+    <div class="col">
+      <h3>Carthage Thalasso</h3>
+    </div>
+    <div class="col">
+    <div class="rating rating_5" data-rating="5">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+    </div>
+	<div class="col">
+      <h3>Prix</h3>
+	  <b id="prix12" style="color: red">233 TND</b>
+    </div>
+  </div>
+
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a onclick="myFunction12()" data-toggle="tab" href="#home12">Petit dejeuner</a></li>
+    <li><a onclick="myFunc12()" data-toggle="tab" href="#menu112">Demi pension</a></li>
+    <li><a onclick="myFunct12()" data-toggle="tab" href="#menu212">Pension complete</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home12" class="tab-pane fade in active">
+      <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu112" class="tab-pane fade">
+          <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+  
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+    <div id="menu212" class="tab-pane fade">
+         <h5>Chambre</h5>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">single</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">double</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">triple</label>
+</div>
+    </div>
+  </div>
+<div 
+style=" left: 580px;cursor:pointer;background-color:#ffcb00; width:30%; height:40px; margin:0px; padding-top:5px;border-radius:4px; border-bottom:1px solid #e4a000;font-family:Arial; color:#003581;font-size: 20px; font-weight: bold;" class="null">
+<a href="/paiement">Je paye en ligne &nbsp;&nbsp;&nbsp;</a>
+</div></div></div>
+								
+								
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="pages">
+						<ul class="pages_list">
+							<li class="page active"><a href="#">01.</a></li>
+							<li class="page"><a href="#">02.</a></li>
+							<li class="page"><a href="#">03.</a></li>
+							<li class="page"><a href="#">04.</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- connexion-->
+	<div id="myModal" class="modal fade" style="display: none;">
+	<div class="modal-dialog modal-login">
+		<div class="modal-content">
+			<form action="/examples/actions/confirmation.php" method="post">
+				<div class="modal-header">				
+					<h4 class="modal-title">Se connecter</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				</div>
+				<div class="modal-body">				
+					<div class="form-group">
+						<label>Email</label>
+						<input type="text" class="form-control" required="required">
+					</div>
+					<div class="form-group">
+						<div class="clearfix">
+							<label>Password</label>
+							<a href="#" class="pull-right text-muted"><small>Forgot?</small></a>
+						</div>
+						
+						<input type="password" class="form-control" required="required">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input type="submit" class="btn btn-primary pull-left"value="Valider">
+					<a href="/inscription" class="checkbox-inline pull-left">Inscription</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+	<!-- Newsletter -->
+
+	<div class="newsletter">
+		<!-- Image by https://unsplash.com/@garciasaldana_ -->
+		<div class="newsletter_background" style="background-image:url(../images/newsletter.jpg);"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<div class="newsletter_content">
+						<div class="newsletter_title text-center">Subscribe to our Newsletter</div>
+						<div class="newsletter_form_container">
+							<form action="#" id="newsletter_form" class="newsletter_form">
+								<div class="d-flex flex-md-row flex-column align-content-center justify-content-between">
+									<input type="email" id="newsletter_input" class="newsletter_input" placeholder="Your E-mail Address">
+									<button type="submit" id="newsletter_button" class="newsletter_button">Subscribe</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+
+				<!-- Footer Column -->
+					<div class="col-lg-4 footer_col">
+					<div class="footer_about">
+						<!-- Logo -->
+						<div class="logo_container">
+							<div class="logo">
+								<div>destino</div>
+								<div>travel agency</div>
+								<div class="logo_image"><img src="images/logo.jpg" alt=""></div>
+										<div class="footer_about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar sed mauris eget tincidunt. Sed lectus nulla, tempor vel eleifend quis, tempus rut rum metus. Pellentesque ultricies enim eu quam fermentum hendrerit.</div>
+						<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+				
+							</div>
+						</div>
+				
+					</div>
+				</div>
+
+				<!-- Footer Column -->
+				<div class="col-lg-4 footer_col">
+					<div class="footer_latest">
+						<div class="footer_title">Latest News</div>
+						<div class="footer_latest_content">
+
+							<!-- Footer Latest Post -->
+							<div class="footer_latest_item">
+								<div class="footer_latest_image"><img src="{{ asset('images/latest_1.jpg') }}" alt="https://unsplash.com/@peecho"></div>
+								<div class="footer_latest_item_content">
+									<div class="footer_latest_item_title"><a href="news.html">Brazil Summer</a></div>
+									<div class="footer_latest_item_date">Jan 09, 2018</div>
+								</div>
+							</div>
+
+							<!-- Footer Latest Post -->
+							<div class="footer_latest_item">
+								<div class="footer_latest_image"><img src="{{ asset('images/latest_2.jpg') }}" alt="https://unsplash.com/@sanfrancisco"></div>
+								<div class="footer_latest_item_content">
+									<div class="footer_latest_item_title"><a href="news.html">A perfect vacation</a></div>
+									<div class="footer_latest_item_date">Jan 09, 2018</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Footer Column -->
+				<div class="col-lg-4 footer_col">
+					<div class="tags footer_tags">
+						<div class="footer_title">Tags</div>
+						<ul class="tags_content d-flex flex-row flex-wrap align-items-start justify-content-start">
+							<li class="tag"><a href="#">travel</a></li>
+							<li class="tag"><a href="#">summer</a></li>
+							<li class="tag"><a href="#">cruise</a></li>
+							<li class="tag"><a href="#">beach</a></li>
+							<li class="tag"><a href="#">offer</a></li>
+							<li class="tag"><a href="#">vacation</a></li>
+							<li class="tag"><a href="#">trip</a></li>
+							<li class="tag"><a href="#">city break</a></li>
+							<li class="tag"><a href="#">adventure</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+</div>
+<script>
+function myFunction() {
+  document.getElementById("prix").innerHTML = "228 TND";
+}
+function myFunc() {
+  document.getElementById("prix").innerHTML = "177 TND";
+}
+function myFunct() {
+  document.getElementById("prix").innerHTML = "278 TND";
+}
+function myFunction1() {
+  document.getElementById("prix1").innerHTML = "161 TND";
+}
+function myFunc1() {
+  document.getElementById("prix1").innerHTML = "226 TND";
+}
+function myFunct1() {
+  document.getElementById("prix1").innerHTML = "291 TND";
+}
+function myFunction12() {
+  document.getElementById("prix12").innerHTML = "233 TND";
+}
+function myFunc12() {
+  document.getElementById("prix12").innerHTML = "295 TND";
+}
+function myFunction14() {
+  document.getElementById("prix14").innerHTML = "63 TND";
+}
+function myFunc14() {
+  document.getElementById("prix14").innerHTML = "80 TND";
+}
+function myFunct14() {
+  document.getElementById("prix14").innerHTML = "90 TND";
+}
+function myFunction15() {
+  document.getElementById("prix15").innerHTML = "79 TND";
+}
+function myFunc15() {
+  document.getElementById("prix15").innerHTML = "84 TND";
+}
+function myFunct15() {
+  document.getElementById("prix15").innerHTML = "92 TND";
+}
+function myFunction16() {
+  document.getElementById("prix16").innerHTML = "50 TND";
+}
+function myFunc16() {
+  document.getElementById("prix16").innerHTML = "63 TND";
+}
+function myFunction17() {
+  document.getElementById("prix17").innerHTML = "60 TND";
+}
+function myFunc17() {
+  document.getElementById("prix17").innerHTML = "66 TND";
+}
+function myFunct17() {
+  document.getElementById("prix17").innerHTML = "78 TND";
+}
+function myFunction117() {
+  document.getElementById("prix117").innerHTML = "113 TND";
+}
+function myFunc117() {
+  document.getElementById("prix117").innerHTML = "105 TND";
+}
+function myFunct117() {
+  document.getElementById("prix117").innerHTML = "138 TND";
+}
+</script>
+<script src="{{ asset('js/jquery-3.2.1.min.js') }}" ></script>
+<script src="{{ asset('styles/bootstrap4/popper.js') }}" ></script>
+<script src="{{ asset('styles/bootstrap4/bootstrap.min.js') }}" ></script>
+<script src="{{ asset('plugins/greensock/TweenMax.min.js') }}" ></script>
+<script src="{{ asset('plugins/greensock/TimelineMax.min.js') }}" ></script>
+<script src="{{ asset('plugins/scrollmagic/ScrollMagic.min.js') }}" ></script>
+<script src="{{ asset('plugins/greensock/animation.gsap.min.js') }}" ></script>
+<script src="{{ asset('plugins/greensock/ScrollToPlugin.min.js') }}" ></script>
+<script src="{{ asset('plugins/Isotope/isotope.pkgd.min.js') }}" ></script>
+<script src="{{ asset('plugins/easing/easing.js') }}" ></script>
+<script src="{{ asset('plugins/parallax-js-master/parallax.min.js') }}" ></script>
+<script src="{{ asset('js/offers_custom.js') }}" ></script>
+</body>
+</html>

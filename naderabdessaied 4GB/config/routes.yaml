@@ -1,0 +1,6 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+offers:
+    path: /offers
+    controller: App\Controller\AgenceController::offers

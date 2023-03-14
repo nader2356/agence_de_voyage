@@ -1,0 +1,316 @@
+<html lang="en">
+<head>
+<title>Hotel</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+{% block head_css %}
+   <link rel="stylesheet" type="text/css" href="{{ asset('styles/bootstrap4/bootstrap.min.css') }}">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet') }}" type="text/css">
+<link rel='stylesheet' type="text/css" href="{{ asset('styles/about_styles.css') }}">
+<link rel='stylesheet' type="text/css" href="{{ asset('styles/about_responsive.css') }}">
+{% endblock %}
+
+<body>
+<div class="super_container">
+	
+	<!-- Header -->
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_container d-flex flex-row align-items-center justify-content-start">
+
+						<!-- Logo -->
+						<div class="logo_container">
+							<div class="logo">
+								<div>Tunisie-Airline</div>
+								<div>travel agency</div>
+								<div class="logo_image"><img src="images/logo.png') }}" alt=""></div>
+							</div>
+						</div>
+
+						<!-- Main Navigation -->
+						<nav class="main_nav ml-auto">
+							<ul class="main_nav_list">
+								<li class="main_nav_item"><a href="{{ path('agence') }}">Home</a></li>	
+								<li class="main_nav_item"><a href="{{ path('offers') }}">Offers</a></li>
+								<li class="main_nav_item"><a href="{{ path('news') }}">News</a></li>
+								<li class="main_nav_item"><a href="{{ path('contact') }}">Contact</a></li>
+								<li class="main_nav_item active"><a data-toggle="modal" href="#myModal">Se connecter</a></li>
+							</ul>
+						</nav>
+
+						<!-- Search -->
+						<div class="search">
+							<form action="#" class="search_form">
+								<input type="search" name="search_input" class="search_input ctrl_class" required="required" placeholder="Keyword">
+								<button type="submit" class="search_button ml-auto ctrl_class"><img src="images/search.png') }}" alt=""></button>
+							</form>
+						</div>
+
+						<!-- Hamburger -->
+						<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu_container menu_mm">
+
+		<!-- Menu Close Button -->
+		<div class="menu_close_container">
+			<div class="menu_close"></div>
+		</div>
+
+		<!-- Menu Items -->
+		<div class="menu_inner menu_mm">
+			<div class="menu menu_mm">
+				<div class="menu_search_form_container">
+					<form action="#" id="menu_search_form">
+						<input type="search" class="menu_search_input menu_mm">
+						<button id="menu_search_submit" class="menu_search_submit" type="submit"><img src="images/search_2.png') }}" alt=""></button>
+					</form>
+				</div>
+				<ul class="menu_list menu_mm">
+					<li class="menu_item menu_mm"><a href="{{ path('agence') }}">Home</a></li>
+					<li class="menu_item menu_mm"><a href="{{ path('offers') }}">Offers</a></li>
+					<li class="menu_item menu_mm"><a href="{{ path('news') }}">News</a></li>
+					<li class="menu_item menu_mm"><a href="{{ path('contact') }}">Contact</a></li>
+				</ul>
+
+				<!-- Menu Social -->
+				
+				<div class="menu_social_container menu_mm">
+					<ul class="menu_social menu_mm">
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+
+				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+	<!-- Home -->
+
+	<div class="home">
+		<!-- Image by https://unsplash.com/@peecho -->
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('images/fact_background.jpg') }}" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_content">
+						<div class="home_content_inner">
+							<div class="home_title">Hôtel</div>
+							<div class="home_breadcrumbs">
+								<ul class="home_breadcrumbs_list">
+									<li class="home_breadcrumb"><a href="{{ path('agence') }}">Home</a></li>
+									<li class="home_breadcrumb">Carthage Thalasso</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<!-- Find Form -->
+
+<div class="about">
+		<div class="container">
+			
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso_2.png') }}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso__4.jpg') }}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso_5.png') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso_6.png') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso_7.png') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso_8.png') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso_9.png') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso__10.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso__11.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso__12.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso_13.png') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso_14.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso__15.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso__16.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso__17.jpg') }}" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso__18.jpg') }}" alt="Third slide">
+    </div>
+      <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('images/Carthage_Thalasso_19.png') }}" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<h2 style="text-align: justify;">Infos Pratiques :</h2>
+<p style="text-align: justify;">Vous avez du mal à décider où aller pendant les vacances ? Ne vous en soucier plus parce qu’une ville splendide est a votre disposition. C’est une région qui se trouve dans le nord-est de Tunis, une station balnéaire où vous pouvez passer votre séjour à faire le touriste et aussi de profiter du soleil au bord de la mer. On parle de Gammarth qui outre de vous proposer des sites touristiques d’une beauté rare, vous accueille avec ses magnifiques hôtels et magasins. Parmi ces derniers, vous pouvez compter le Carthage Thalasso : un hôtel 5 étoiles qui va vous plaire et qui va rendre votre séjour inoubliable.&nbsp;</p>
+<h3 style="text-align: justify;">Situation de l'hotel :</h3>
+<p style="text-align: justify;">L’hôtel se trouve en bord des plages de Gammarth. Il est aussi entouré par de magnifiques endroits à visiter comme :</p>
+<p style="text-align: justify;">- L’Acropolium de Carthage qui est une institution culturelle et touristique située juste à 9,8 km ;&nbsp;</p>
+<p style="text-align: justify;">- Du Cathédrale Saint-Louis qui est environ à 9,9 km de l’hôtel.</p>
+<p style="text-align: justify;">- Le Musée national de Carthage qui se trouve à 9,9 km</p>
+<p style="text-align: justify;">- Et les Thermes d’Antonin qui est à 10,7 km</p>
+<p style="text-align: justify;">- Puis enfin le Cimetière américain de Carthage qui est dans les 10,7 km.&nbsp;</p>
+<h3 style="text-align: justify;">Les types d'hébergements que puis-je réserver à l'établissement :</h3>
+<p style="text-align: justify;">L’hôtel compte au total 250 chambres tout confort qui sont réparties sur 3 étages. Chacune est équipée d’une climatisation à réglage personnel que vous pouvez paramétrer selon vos besoins. Vous trouverez aussi un mini bar où vous pouvez garder vos boissons au frais, et une télévision avec accès à des chaînes par satellite pour que vous ne manquiez pas vos émissions préférées et les dernières nouvelles dans le monde. Un balcon attenant a été mis en place afin que vous puissiez toujours profiter de la vue, aussi bien au matin au réveil, lors d’un petit déjeuner, ou dans la soirée pour finir en beauté votre journée. Selon votre budget, il peut donner sur la mer ou sur les jardins de l’établissement.&nbsp;</p>
+<p style="text-align: justify;">&nbsp;Vous aurez aussi une salle de bain privée avec un ensemble de douche et baignoire, et équipée d’un sèche-cheveux qui sera à votre disposition.&nbsp;</p>
+<p style="text-align: justify;">Un bureau est à votre disponibilité si vous avez besoin de travailler et un accès WiFi gratuit pour que vous soyez toujours connecté : l'hotel&nbsp;se prête aussi à des voyages d’affaires.&nbsp;</p>
+<h3 style="text-align: justify;">Restaurants et Bars sur place :</h3>
+<p style="text-align: justify;">L’hôtel dispose de 3 restaurants qui assurent votre confort et où vous pouvez prendre vos petits-déjeuners en buffet chaque jour. Ils vous offrent aussi un service d’étage 24 heures sur 24 pour vous faciliter l’escale.</p>
+<p style="text-align: justify;">Vous trouverez un bar/salon si vous voulez boire en tranquillité et dans le calme toute en regardant la télé. Ici cocktail en tout genre sont servi à tous les pensionnaires de l’hôtel qui en ont besoin.&nbsp;</p>
+<p style="text-align: justify;">Et dans le même ordre d’idée d’offrir un peu d’intimités à ces clients, le complexe dispose également d’une cafeteria, pour ceux qui souhaitent boire une tasse de thé ou de café. Cette dernière est ouverte tous les matins.&nbsp;</p>
+<h2 style="text-align: justify;">Les plus de l'hôtel Carthage Thalasso 5* Tunisiebooking :</h2>
+<h3 style="text-align: justify;">Activités et loisirs disponibles à l'établissement:</h3>
+<p style="text-align: justify;">Cet hotel possède une plage privée qui est équipée par des transats de plage et des serviettes de plage. Elle a aussi 2 piscines extérieures qui sont ouvertes en saison et une piscine couverte, sans oublier la piscine pour enfants. Pour ce qui est des baignades, vous n’avez que l’embarras du choix. Afin de faire plaisir les petits comme les grands, un toboggan aquatique est disponible.&nbsp;</p>
+<p style="text-align: justify;">Si vous êtes passionné de sports, il y a le parachutisme ascensionnel, le ski nautique, la planche à voile et les scooters des mers qui se trouvent à proximité de l’hôtel. Et vous avez droit à un accès gratuit au parc aquatique pour apprécier les merveilles de la mer.</p>
+<p style="text-align: justify;">Par contre si vous aimez bien prendre soins de votre beauté, il y a une salle de fitness avec des coachs qui est toujours à votre disposition. Une salle de soins spa complet, bain à remous, Hammam et sauna : l’établissement vous propose large gamme de soins. Et aussi il y a un salon de coiffure si besoin est.&nbsp;</p>
+<h3 style="text-align: justify;">Cet hôtel est connu aussi sous le nom:</h3>
+<p>Carthage thalasso gammarth spa</p>
+</div></div></div>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+
+				<!-- Footer Column -->
+				<div class="col-lg-4 footer_col">
+					<div class="footer_about">
+						<!-- Logo -->
+						<div class="logo_container">
+							<div class="logo">
+								<div>Tunisie-Airline</div>
+								<div>travel agency</div>
+								<div class="logo_image"><img src="images/logo.png') }}" alt=""></div>
+							</div>
+						</div>
+						<div class="footer_about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar sed mauris eget tincidunt. Sed lectus nulla, tempor vel eleifend quis, tempus rut rum metus. Pellentesque ultricies enim eu quam fermentum hendrerit.</div>
+						<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+					</div>
+				</div>
+
+				<!-- Footer Column -->
+				<div class="col-lg-4 footer_col">
+					<div class="footer_latest">
+						<div class="footer_title">Latest News</div>
+						<div class="footer_latest_content">
+
+							<!-- Footer Latest Post -->
+							<div class="footer_latest_item">
+								<div class="footer_latest_image"><img src="{{ asset('images/latest_1.jpg') }}" alt="https://unsplash.com/@peecho"></div>
+								<div class="footer_latest_item_content">
+									<div class="footer_latest_item_title"><a href="{{ path('news') }}">Brazil Summer</a></div>
+									<div class="footer_latest_item_date">Jan 09, 2018</div>
+								</div>
+							</div>
+
+							<!-- Footer Latest Post -->
+							<div class="footer_latest_item">
+								<div class="footer_latest_image"><img src="{{ asset('images/latest_2.jpg') }}" alt="https://unsplash.com/@sanfrancisco"></div>
+								<div class="footer_latest_item_content">
+									<div class="footer_latest_item_title"><a href="{{ path('news') }}">A perfect vacation</a></div>
+									<div class="footer_latest_item_date">Jan 09, 2018</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Footer Column -->
+				<div class="col-lg-4 footer_col">
+					<div class="tags footer_tags">
+						<div class="footer_title">Tags</div>
+						<ul class="tags_content d-flex flex-row flex-wrap align-items-start justify-content-start">
+							<li class="tag"><a href="#">travel</a></li>
+							<li class="tag"><a href="#">summer</a></li>
+							<li class="tag"><a href="#">cruise</a></li>
+							<li class="tag"><a href="#">beach</a></li>
+							<li class="tag"><a href="#">offer</a></li>
+							<li class="tag"><a href="#">vacation</a></li>
+							<li class="tag"><a href="#">trip</a></li>
+							<li class="tag"><a href="#">city break</a></li>
+							<li class="tag"><a href="#">adventure</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+</div>
+
+{% block head_js %}
+ <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ asset('styles/bootstrap4/popper.js') }}"></script>
+<script src="{{ asset('styles/bootstrap4/bootstrap.min.js') }}"</script>
+<script src="{{ asset('plugins/greensock/TweenMax.min.js') }}"></script>
+<script src="{{ asset('plugins/greensock/TimelineMax.min.js') }}"></script>
+<script src="{{ asset('plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+<script src="{{ asset('plugins/greensock/animation.gsap.min.js') }}"></script>
+<script src="{{ asset('plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+<script src="{{ asset('plugins/easing/easing.js') }}"></script>
+<script src="{{ asset('plugins/parallax-js-master/parallax.min.js') }}"></script>
+<script src="{{ asset('js/about_custom.js') }}"></script>
+{% endblock %}
+
+
+</body>
+</html>
